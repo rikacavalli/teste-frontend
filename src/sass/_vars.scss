@@ -1,0 +1,34 @@
+// Colors
+$white: #FFF;
+$black: #000;
+$yellow: #feb452;
+$green: #106d64;
+$green-light: #15a996;
+$red: #ff4949;
+$gray: #F3F0EA;
+
+// Mixins
+@mixin border-radius($border) {
+	-webkit-border-radius: $border;
+	-moz-border-radius: $border;
+	-ms-border-radius: $border;
+	border-radius: $border;
+}
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition:$transition;
+	-ms-transition:$transition;
+	transition: $transition;
+}
+@mixin rotate($rotate) {
+	-webkit-transform: rotate($rotate);
+	-moz-transform: rotate($rotate);
+	-ms-transform: rotate($rotate);
+	transform: rotate($rotate);
+}
+@mixin animation($animation) {
+	-webkit-animation: $animation;
+	-moz-animation: $animation;
+	-ms-animation: $animation;
+	animation: $animation;
+}

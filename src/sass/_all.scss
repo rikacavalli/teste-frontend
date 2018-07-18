@@ -1,0 +1,375 @@
+body {
+	font-family: 'Open Sans';
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	color: $black;
+}
+::placeholder {
+    color: $white;
+    opacity: 1;
+}
+:-ms-input-placeholder { 
+    color: $white;
+}
+::-ms-input-placeholder { 
+    color: $white;
+}
+.invalid::placeholder {
+    color: $red;
+    opacity: 1;
+}
+.invalid:-ms-input-placeholder { 
+    color: $red;
+}
+.invalid::-ms-input-placeholder { 
+    color: $red;
+}
+.btn {
+	display: inline-block;
+	background: $yellow;
+	border: 2px solid transparent;
+	color: $green;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 10px 50px;
+	cursor: pointer;
+	@include border-radius(30px);
+	@include transition(all .2s);
+	&:hover {
+		background: transparent;
+		border-color: $yellow;
+		color: $yellow;
+	}
+	&.--big {
+		font-size: 24px;
+		padding: 15px 45px;
+		margin: 15px 0;
+	}
+}
+
+.header {
+	background: url('../images/header-bg.jpg') center no-repeat;
+	background-size: cover;
+	z-index: 1;
+	padding: 80px 0 100px 0;
+	.header__col-1 {
+		text-align: center;
+	}
+	.logo__title {
+		color: $yellow;
+		font-size: 48px;
+		line-height: 50px;
+		text-transform: uppercase;
+	}
+	.header__text {
+		border-left: 1px solid $white;
+		h1 {
+			color: $yellow;
+			font-size: 48px;
+			line-height: 50px;
+			text-transform: uppercase;
+			margin: 40px 0 25px 0;
+		}
+		h2 {
+			color: $yellow;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 38px;
+			text-transform: uppercase;
+		}
+		h3 {
+			color: $white;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 26px;
+			text-transform: uppercase;
+			margin: 15px 0;
+		}
+		p {
+			color: $white;
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 20px;
+		}
+		.btn + p {
+			color: $yellow;
+			font-size: 22px;
+			line-height: 24px;
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+	}
+}
+.slider {
+	z-index: 3;
+	padding: 100px 0 40px 0;
+	background: $gray;
+	&::before {
+		content: "";
+		display: block;
+		border-top: 60px solid transparent;
+    	border-bottom: 0 solid transparent;
+    	border-left: calc(100vw - 20px) solid $gray;
+    	margin-top: -160px;
+	}
+	h1 {
+		color: $green;
+		font-size: 40px;
+		font-weight: 800;
+		line-height: 42px;
+		text-transform: uppercase;
+		margin: 20px 0;
+		text-align: center;
+	}
+	ul {
+		margin-top: 50px;
+		max-width: 80%;
+		li {
+			float: left;
+			width: 25%;
+			font-size: 18px;
+			line-height: 22px;
+			color: $green;
+			&::before {
+			  content: "•";
+			  color: $yellow;
+			  margin-right: 15px;
+			}
+		}
+	}
+	.swiper-container {
+	    width: 100%;
+	    height: 450px;
+	}
+	.slider__navigation {
+		position: absolute;
+		height: 20px;
+	    width: 100%;
+	    bottom: 0;
+	    text-align: center;
+	}
+	.swiper-button-prev {
+		background-image: url('../images/prev-arrow.png');
+		background-size: 11px 20px;
+		width: 11px;
+		height: 20px;
+		position: relative;
+		top: 0;
+	    display: inline-block;
+	    vertical-align: -4px;
+	    margin: 0 20px 0 0;
+	}
+	.swiper-button-next {
+		background-image: url('../images/next-arrow.png');
+		background-size: 11px 20px;
+		width: 11px;
+		height: 20px;
+		position: relative;
+		top: 0;
+	    display: inline-block;
+	    vertical-align: -4px;
+	    margin: 0 0 0 20px;
+	}
+	.swiper-pagination {
+		position: relative;
+		display: inline-block;
+		span {
+			width: 12px;
+			height: 12px;
+			border: 1px solid $green;
+			background: transparent;
+			opacity: 1;
+			margin: 0 10px;
+			&.swiper-pagination-bullet-active {
+				background: $yellow;
+				border-color: $yellow;
+			}
+		}
+	}
+}
+.accordion {
+	z-index: 2;
+	background: $yellow;
+	padding: 0 0 100px;
+	&::before {
+		content: "";
+		display: block;
+		border-bottom: 60px solid transparent;
+    	border-top: 0 solid transparent;
+    	border-left: calc(100vw - 20px) solid $gray;
+	}
+	ul {
+		max-width: 60%;
+		margin-top: 80px;
+		position: relative;
+		z-index: 5;
+		li {
+			margin-bottom: 3px;
+		}
+	}
+	.item__title {
+		display: block;
+		background: $green;
+		color: $white;
+		font-size: 18px;
+		font-weight: 400;
+		padding: 10px;
+		cursor: pointer;
+		@include transition(all .2s);
+		&::after {
+			content: url('../images/accordion-arrow.png');
+			float: right;
+			@include transition(all .2s);
+		}
+		&:hover {
+			background: $green-light;
+		}
+		&.active {
+			background: $green-light;
+			&::after {
+				@include rotate(180deg);
+			}
+		}
+	}
+	.item__text {
+		background: $gray;
+		color: $black;
+		font-size: 16px;
+		line-height: 18px;
+		padding: 1px 15px;
+		display: none;
+	}
+}
+.cloud {
+	background: url('../images/cloud.png') no-repeat center;
+	width: 135px;
+	height: 60px;
+	position: absolute;
+	z-index: 1;
+	&.--one {
+		right: 5px;
+		top: 10%;
+		opacity: 0;
+		@include animation(cloud-one 5s infinite);
+	}
+	&.--two {
+		right: 100px;
+		top: 40%;
+		opacity: 0;
+		@include animation(cloud-two 5s 3s infinite);
+	}
+	&.--three {
+		right: 30px;
+		bottom: 10%;
+		opacity: 0;
+		@include animation(cloud-three 5s 1s infinite);
+	}
+	&.--four {
+		left: 30%;
+		top: 18%;
+		opacity: 0;
+		@include animation(cloud-four 5s 1.5s infinite);
+	}
+	&.--five {
+		left: 25%;
+		top: 55%;
+		opacity: 0;
+		@include animation(cloud-five 5s 2.5s infinite);
+	}
+	&.--six {
+		left: 40%;
+		bottom: 5%;
+		opacity: 0;
+		@include animation(cloud-six 5s .5s infinite);
+	}
+}
+.contact {
+	padding: 80px 0;
+	background: $green;
+	form {
+		width: 50%;
+		text-align: center;
+	}
+	input, & textarea {
+		font-family: 'Open Sans';
+		border-bottom: 1px solid $white;
+		color: $white;
+		font-size: 18px;
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 5px 0;
+	}
+	textarea {
+		max-height: 150px;
+		min-height: 150px;
+		max-width: 100%;
+		min-width: 100%;
+	}
+	span {
+		color: $red;
+		display: none;
+	    text-align: left;
+	    margin-top: -10px;
+	    margin-bottom: 15px;
+	}
+	.invalid {
+		border-color: $red;
+		color: $red;
+	}
+}
+@keyframes cloud-one {
+	30% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		right: 300px;
+	}
+}
+@keyframes cloud-two {
+	30% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		right: 400px;
+	}
+}
+@keyframes cloud-three {
+	30% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		right: 500px;
+	}
+}
+@keyframes cloud-four {
+	30% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		left: 0;
+	}
+}
+@keyframes cloud-five {
+	30% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		left: 5%;
+	}
+}
+@keyframes cloud-six {
+	30% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		left: 10%;
+	}
+}

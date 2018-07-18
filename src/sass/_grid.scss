@@ -1,0 +1,33 @@
+[class*="col-"] {
+  padding-left: 30px;
+  padding-right: 30px;
+  float: left;
+  &::after, &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    clear: both;
+  }
+}
+.container {
+  width: 100%;
+  max-width: 1170px;
+  &::after, &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    clear: both;
+  }
+}
+.section {
+  position: relative;
+}
+.header__col-1 {
+  width: 40%;
+}
+.header__col-2 {
+  width: 60%;
+}
+.slider__col-1, .accordion__col-1, .contact__col-1 {
+  width: 100%;
+}
